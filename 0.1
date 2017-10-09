@@ -1,0 +1,21 @@
+#include <iostream>
+
+struct Node {
+	int data;
+	Node * next;
+};
+
+Node *reverse(Node * head) {
+
+	Node *reversed = nullptr;
+
+	while (head != nullptr)
+	{
+		Node *p = head->next;
+		head->next = reversed;
+		reversed = head;
+		head = p;
+	}
+
+	return reversed;
+}
